@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-chalk: #f2f2f2;
+  --color-ink: #000000;
+  --color-acid: #c8f135;
+  --color-graphite: #4d4d4d;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Brand: no border-radius on any structural element. */
+select,
+input,
+button,
+textarea {
+  border-radius: 0;
+  font-family: inherit;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-chalk);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 1px;
+}
+
+/* ── Form controls ───────────────────────────────────────── */
+.ec-input,
+.ec-select {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--color-ink);
+  padding: 0.625rem 0.75rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+
+.ec-input:disabled,
+.ec-select:disabled {
+  background-color: #e6e6e6;
+  color: #6b6b6b;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.ec-btn,
+.ec-btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--color-ink);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.8125rem;
+}
+
+.ec-btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-chalk);
+}
+
+.ec-btn {
+  background-color: transparent;
+  color: var(--color-ink);
+}
+
+.ec-btn:hover,
+.ec-btn-primary:hover:not(:disabled) {
+  background-color: var(--color-graphite);
+  border-color: var(--color-graphite);
+  color: var(--color-chalk);
+}
+
+.ec-btn-primary:disabled {
+  background-color: #b3b3b3;
+  border-color: #b3b3b3;
+  color: var(--color-chalk);
+  cursor: not-allowed;
+}
+
+/* ── Tags & callouts ─────────────────────────────────────── */
+/* Ink outline tag — used in tables where a flag may repeat many times. */
+.ec-tag {
+  display: inline-block;
+  border: 1px solid var(--color-ink);
+  padding: 0.1rem 0.4rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Acid Lime accent — reserved for critical callouts (max twice per page). */
+.ec-flag {
+  display: inline-block;
+  background-color: var(--color-acid);
+  color: var(--color-ink);
+  padding: 0.1rem 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Hard-error inline message (Entry view). */
+.ec-error {
+  background-color: var(--color-acid);
+  color: var(--color-ink);
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* R-22 memo line. */
+.ec-memo {
+  border-left: 3px solid var(--color-ink);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+}
